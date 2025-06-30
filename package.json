@@ -1,0 +1,27 @@
+{
+  "name": "activity-monitor-daemon",
+  "version": "1.0.0",
+  "description": "A TypeScript daemon that monitors Discord voice activity and Steam game launches",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "watch": "tsc --watch",
+    "setup": "node scripts/setup.js"
+  },
+  "keywords": ["discord", "steam", "monitoring", "daemon", "typescript"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "twilio": "^4.19.0",
+    "dotenv": "^16.3.1",
+    "ps-list": "^8.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "typescript": "^5.2.2",
+    "ts-node": "^10.9.1"
+  }
+} 
