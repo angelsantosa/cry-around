@@ -51,13 +51,13 @@ class ActivityDaemon {
     
     switch (event.type) {
       case 'discord_join':
-        return `${yourName} just joined ${event.details.channel} on Discord`;
+        return `${yourName} se metio a ${event.details.channel} en Discord`;
       case 'discord_leave':
-        return `${yourName} just left ${event.details.channel} on Discord`;
+        return `${yourName} se salio del canal ${event.details.channel} en Discord`;
       case 'game_start':
-        return `${yourName} just started playing ${event.details.game}`;
+        return `Urtito, el ${yourName} inicio ${event.details.game}, vente a jugar.`;
       case 'game_stop':
-        return `${yourName} just stopped playing ${event.details.game}`;
+        return `Urtito, el ${yourName} ya hizo ragequit del ${event.details.game}`;
       default:
         return `${yourName} had some activity`;
     }

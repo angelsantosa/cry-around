@@ -4,14 +4,14 @@ import { ActivityMonitor, ActivityEvent } from '../types';
 // Common Steam game executable names
 const STEAM_GAMES = [
   // Popular games - you can add more
-  'cs2.exe', 'csgo.exe', 'dota2.exe', 'steam.exe',
-  'hl2.exe', 'portal2.exe', 'tf2.exe', 'gmod.exe',
-  'minecraft.exe', 'javaw.exe', // Minecraft
-  'spotify.exe', // Spotify (if you want to monitor this too)
-  'discord.exe', // Discord desktop app
-  'chrome.exe', 'firefox.exe', // Browsers
-  'code.exe', 'vscode.exe', // VS Code
-  'slack.exe', 'teams.exe', // Communication apps
+  'cs2.exe', 'csgo.exe', 'dota2.exe',
+  // 'hl2.exe', 'portal2.exe', 'tf2.exe', 'gmod.exe',
+  // 'minecraft.exe', 'javaw.exe', // Minecraft
+  // 'spotify.exe', // Spotify (if you want to monitor this too)
+  // 'discord.exe', // Discord desktop app
+  // 'chrome.exe', 'firefox.exe', // Browsers
+  // 'code.exe', 'vscode.exe', // VS Code
+  // 'slack.exe', 'teams.exe', // Communication apps
 ];
 
 export class SteamMonitor implements ActivityMonitor {
@@ -32,7 +32,7 @@ export class SteamMonitor implements ActivityMonitor {
 
       for (const process of processes) {
         const processName = process.name.toLowerCase();
-        
+
         for (const game of STEAM_GAMES) {
           if (processName.includes(game.toLowerCase())) {
             currentGames.add(game);
@@ -105,7 +105,7 @@ export class SteamMonitor implements ActivityMonitor {
     }
 
     this.isRunning = false;
-    
+
     if (this.intervalId) {
       clearInterval(this.intervalId);
       this.intervalId = null;
